@@ -93,6 +93,8 @@
 
 .table-container {
   padding: 20px;
+  align-items: center;
+   overflow-x: auto;
 }
 
 table {
@@ -102,11 +104,12 @@ table {
 
 th, td {
   padding: 15px;
-  text-align: left;
+  text-align: center;
   border-bottom: 5px solid #ddd;
   border-top: 5px solid #ddd;
   border-left: 5px solid #ddd;
   border-right: 5px solid #ddd;
+  vertical-align: middle;
 }
 
 th {
@@ -149,5 +152,17 @@ h3{
   font-size: 30px;
   color: #00C853;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 14px; 
+  }
+  th, td {
+    padding: 10px;
+  }
+  .table-container {
+    padding: 10px;
+  }
 }
 </style>
