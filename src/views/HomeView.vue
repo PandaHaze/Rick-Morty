@@ -2,10 +2,6 @@
   <v-app>
     <Loading v-if="isLoading"></Loading>
     <div v-else>
-      <v-btn-toggle v-model="viewMode" mandatory>
-        <v-btn :value="'cards'" color="lime mt-3 ml-4" @click="toggleViewMode('cards')">Vista Cards</v-btn>
-        <v-btn :value="'table'" color="lime mt-3" @click="toggleViewMode('table')">Vista Tabla</v-btn>
-      </v-btn-toggle>
       <v-text-field
         v-model="search"
         label="Search"
@@ -15,7 +11,7 @@
         @input="filterCharacters"
       ></v-text-field>
 
-      <div v-if="viewMode === 'cards'">
+      <div>
         <div class="content">
           <v-card v-for="character in filterSearch" :key="character.id" :class="getCharacterStatusClass(character)">
             <v-img :src="character.image" class="character-image" alt=""></v-img>
@@ -27,22 +23,6 @@
           </v-card>
         </div>
       </div>
-
-      <v-data-table v-else :items="filterSearch" 
-      :headers="headers" 
-      class="data"
-      @pagination="scrollToTop">
-        <template v-slot:item="{ item }">
-          <tr class="tr">
-            <td>
-              <v-img :src="item.image" alt="" class="character-imagee"></v-img>
-            </td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.species }}</td>
-            <td :class="getCharacterStatusClass(item)">{{ item.status }}</td>
-          </tr>
-        </template>
-      </v-data-table>
     </div>
   </v-app>
 </template>
@@ -78,8 +58,6 @@ export default {
           value: 'status',
         },
       ],
-      viewMode: 'cards',
-      tableView: true,
     };
   },
   mounted() {
@@ -117,9 +95,6 @@ export default {
       } else {
         return 'character-gray';
       }
-    },
-    toggleViewMode() {
-      this.viewMode = this.viewMode === 'cards' ? 'table' : 'cards';
     },
   },
 };
@@ -181,13 +156,8 @@ h4 {
   height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
-  width: 90%;
-  margin: 50px;
+  width: 100%;
 }
-.tr{
-  background-color: whitesmoke;
-}
-
 </style>
 
 

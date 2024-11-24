@@ -1,10 +1,5 @@
 <template>
     <div class="content">  
-    <v-card> <v-img height="545" width="1300" src="https://images.hdqwalls.com/download/rick-and-morty-hd-art-kz-1366x768.jpg">
-     
-  
-      </v-img>
-    </v-card>
   </div>
 
 </template>
@@ -17,10 +12,21 @@ export default {
 </script>
 
 <style scoped>
+
+
 .content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
+  background: url('https://images.hdqwalls.com/download/rick-and-morty-hd-art-kz-1366x768.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+}
+@media(max-width: 768px){
+    .content{
+      margin: 0 auto; 
+      background-position: center;
+      justify-content: space-around;
+    }
 }
 </style>
