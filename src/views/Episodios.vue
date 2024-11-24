@@ -99,6 +99,8 @@ export default {
 
 .table-container {
   padding: 20px;
+  align-items: center;
+  overflow-x: auto;
 }
 
 table {
@@ -113,6 +115,7 @@ th, td {
   border-top: 5px solid #ddd;
   border-left: 5px solid #ddd;
   border-right: 5px solid #ddd;
+  vertical-align: middle;
 }
 
 th {
