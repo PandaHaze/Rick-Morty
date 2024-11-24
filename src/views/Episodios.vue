@@ -183,4 +183,16 @@ h3{
 .tooltip:hover .tooltiptext {
   visibility: visible;
   }
+
+  @media (max-width: 600px) {
+  table {
+    font-size: 14px; 
+  }
+  th, td {
+    padding: 10px;
+  }
+  .table-container {
+    padding: 10px;
+  }
+}
 </style>
