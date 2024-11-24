@@ -15,7 +15,7 @@
     <v-text-field
       v-model="search"
       label="Search"
-      class="ml-7 mt-5"
+      class="mx-4 mt-5 custom-input input"
       outlined
       color="#00C853"
     ></v-text-field>
